@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Únete a XPRT</title>
+<meta name="description" content="Registro rápido para pymes, emprendedores e independientes. Recibe la invitación a la primera Cátedra XPRT.">
+<meta name="theme-color" content="#0E1116">
+<meta property="og:title" content="Únete a XPRT Group">
+<meta property="og:description" content="Registro rápido para pymes, emprendedores e independientes.">
+<meta property="og:image" content="assets/og-image.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0E1116;--cob:#2B50FF;--cob-d:#1F42EB;--cob-l:#DCE3FF;--bone:#F4F2EE;--gr:#5B6270;--line:#C9CDD5;--err:#C2261B}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--ink)}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;color:var(--ink);line-height:1.5;font-size:16px;-webkit-font-smoothing:antialiased;min-height:100vh}
+.top{position:relative;overflow:hidden;color:var(--bone);padding:calc(28px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) 44px max(20px,env(safe-area-inset-left,0px))}
+.diag{position:absolute;right:-42%;top:-20%;width:40%;height:150%;background:var(--cob);transform:skewX(-34deg)}
+.top-in{position:relative;max-width:520px;margin:0 auto}
+.logo{height:24px;width:auto;display:block}
+.eyebrow{margin-top:34px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#8EA0FF}
+h1{margin-top:10px;font-size:clamp(32px,9vw,44px);line-height:1.05;letter-spacing:-.03em;font-weight:800;max-width:13ch;text-wrap:balance}
+.sq{display:inline-block;width:.16em;height:.16em;background:var(--cob);margin-left:.05em}
+.lead{margin-top:14px;font-size:17px;color:#C9CFDA;max-width:34ch}
+.lead b{color:var(--bone)}
+.sheet{background:var(--bone);border-radius:20px 20px 0 0;padding:28px max(20px,env(safe-area-inset-right,0px)) calc(32px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));min-height:60vh}
+.sheet-in{max-width:520px;margin:0 auto}
+.gets{display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
+.gets li{list-style:none;display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#3A4150}
+.gets li::before{content:"";flex:0 0 8px;height:8px;margin-top:7px;background:var(--cob)}
+form{display:flex;flex-direction:column;gap:18px}
+.f{display:flex;flex-direction:column;gap:6px}
+label,.lbl{font-size:14px;font-weight:600}
+input[type=text],input[type=tel],select{font:inherit;font-size:16px;padding:14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);width:100%}
+input:focus,select:focus{outline:3px solid var(--cob-l);border-color:var(--cob)}
+.at{position:relative}
+.at span{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--gr);font-weight:600}
+.at input{padding-left:32px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{font-weight:500;font-size:15px;border:1.5px solid var(--line);background:#fff;border-radius:30px;padding:10px 16px;cursor:pointer;display:flex;align-items:center;gap:8px}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label:has(input:checked){background:var(--ink);border-color:var(--ink);color:#fff}
+.chips label:has(input:focus-visible){outline:3px solid var(--cob-l)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#3A4150;font-weight:400}
+.consent input{margin-top:3px;width:18px;height:18px;flex:0 0 18px;accent-color:var(--cob)}
+.consent a{color:var(--cob)}
+.invalid{border-color:var(--err)!important}
+.chips.invalid label{border-color:var(--err)}
+.consent.invalid{color:var(--err)}
+.btn{font:inherit;font-weight:700;font-size:17px;background:var(--cob);color:#fff;border:0;border-radius:10px;padding:17px 20px;cursor:pointer;width:100%;text-align:center;text-decoration:none;display:block}
+.btn:hover{background:var(--cob-d)}
+.btn:disabled{opacity:.6;cursor:wait}
+.btn-dark{background:var(--ink)}
+.btn-dark:hover{background:#1A1F27}
+.msg{font-size:14px;min-height:20px}
+.msg.err{color:var(--err)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.done{display:flex;flex-direction:column;gap:16px;text-align:center;align-items:center;padding:10px 0 20px}
+.ok{width:60px;height:60px;border-radius:50%;background:var(--cob-l);display:flex;align-items:center;justify-content:center}
+.done h2{font-size:26px;letter-spacing:-.02em;line-height:1.15}
+.done p{color:#3A4150;max-width:34ch}
+.handle{font-weight:700;color:var(--ink)}
+.fine{margin-top:22px;font-size:12px;color:var(--gr)}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:no-preference){.btn{transition:background .15s}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="diag" aria-hidden="true"></div>
+  <div class="top-in">
+    <img class="logo" src="assets/xprt-logo-negativo.svg" alt="XPRT Group">
+    <p class="eyebrow">Para pymes, emprendedores e independientes</p>
+    <h1>Tu negocio, con números claros<span class="sq"></span></h1>
+    <p class="lead">Regístrate en 30 segundos y sé de los primeros en la <b>comunidad XPRT</b>.</p>
+  </div>
+</header>
+
+<main class="sheet">
+  <div class="sheet-in">
+
+    <section id="form-view">
+      <ul class="gets">
+        <li>Invitación a la primera Cátedra XPRT, gratis.</li>
+        <li>La plantilla de flujo de caja para tu negocio.</li>
+        <li>Contenido práctico de finanzas y estrategia en Instagram.</li>
+      </ul>
+
+      <form id="ig-form" novalidate>
+        <div class="f">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+        </div>
+        <div class="f">
+          <label for="whatsapp">WhatsApp</label>
+          <input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="+57 300 000 0000" required>
+        </div>
+        <div class="f">
+          <label for="instagram">Tu usuario de Instagram</label>
+          <div class="at"><span aria-hidden="true">@</span><input id="instagram" name="instagram" type="text" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="tunegocio" required></div>
+        </div>
+        <div class="f">
+          <span class="lbl" id="perfil-lbl">Me identifico como</span>
+          <div class="chips" id="perfil-chips" role="radiogroup" aria-labelledby="perfil-lbl">
+            <label><input type="radio" name="perfil" value="Pyme">Pyme</label>
+            <label><input type="radio" name="perfil" value="Emprendedor(a)">Emprendedor(a)</label>
+            <label><input type="radio" name="perfil" value="Independiente">Independiente</label>
+          </div>
+        </div>
+        <div class="f">
+          <label for="reto">¿Cuál es hoy tu mayor reto?</label>
+          <select id="reto" name="reto" required>
+            <option value="">Elige una opción</option>
+            <option>Flujo de caja</option>
+            <option>Vender más</option>
+            <option>Saber si de verdad gano dinero</option>
+            <option>Impuestos y trámites</option>
+            <option>No me alcanza el tiempo</option>
+            <option>Aprender a invertir</option>
+          </select>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="website">No llenar</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <label class="consent" id="consent-wrap">
+          <input id="consent" name="consent" type="checkbox" required>
+          <span>Autorizo a XPRT Group a tratar mis datos según su <a href="privacidad.html">política de tratamiento de datos</a> (Ley 1581 de 2012) para contactarme por WhatsApp e Instagram.</span>
+        </label>
+        <button class="btn" id="submit-btn" type="submit">Quiero unirme</button>
+        <p class="msg" id="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="done-view" class="done" hidden>
+      <div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2B50FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <h2 id="done-title">¡Listo, ya estás dentro!</h2>
+      <p>Último paso: síguenos en Instagram para no perderte la Cátedra ni el contenido. Te escribiremos por WhatsApp.</p>
+      <a class="btn" id="follow-btn" href="https://www.instagram.com/xprt.group/">Seguir a <span id="handle">@xprt.group</span></a>
+      <a class="btn btn-dark" href="index.html">Conocer XPRT</a>
+    </section>
+
+    <p class="fine">© 2026 XPRT Group · Medellín, Colombia. Contenido educativo; no constituye recomendación de inversión.</p>
+  </div>
+</main>
+
+<script src="config.js"></script>
+<script>
+(function () {
+  var cfg = window.XPRT_CONFIG || {};
+  var endpoint = cfg.REGISTRO_ENDPOINT || '';
+  var igUser = (cfg.INSTAGRAM_USER || 'xprt.group').replace(/^@/, '');
+  var form = document.getElementById('ig-form');
+  var msg = document.getElementById('form-msg');
+  var btn = document.getElementById('submit-btn');
+  var chips = document.getElementById('perfil-chips');
+  var consentWrap = document.getElementById('consent-wrap');
+
+  document.getElementById('handle').textContent = '@' + igUser;
+  document.getElementById('follow-btn').href = 'https://www.instagram.com/' + igUser + '/';
+
+  function setMsg(t, type) { msg.textContent = t; msg.className = 'msg' + (type ? ' ' + type : ''); }
+
+  function cleanIg(v) {
+    v = v.trim().replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/^@+/, '').replace(/[/?#].*$/, '');
+    return v;
+  }
+
+  function validate() {
+    var ok = true;
+    function mark(el, bad) { el.classList.toggle('invalid', bad); if (bad) ok = false; }
+    mark(form.nombre, form.nombre.value.trim().length < 2);
+    mark(form.whatsapp, form.whatsapp.value.replace(/\D/g, '').length < 7);
+    mark(form.instagram, !/^[A-Za-z0-9._]{1,30}$/.test(cleanIg(form.instagram.value)));
+    mark(chips, !form.querySelector('input[name="perfil"]:checked'));
+    mark(form.reto, !form.reto.value);
+    mark(consentWrap, !form.consent.checked);
+    return ok;
+  }
+
+  form.addEventListener('input', function (e) {
+    e.target.classList.remove('invalid');
+    if (e.target.name === 'perfil') chips.classList.remove('invalid');
+    if (e.target.name === 'consent') consentWrap.classList.remove('invalid');
+  });
+
+  function showDone(name) {
+    var first = (name || '').trim().split(/\s+/)[0];
+    if (first) document.getElementById('done-title').textContent = '¡Listo, ' + first + ', ya estás dentro!';
+    document.getElementById('form-view').hidden = true;
+    document.getElementById('done-view').hidden = false;
+    window.scrollTo(0, 0);
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!validate()) { setMsg('Completa los campos marcados y acepta la política de datos.', 'err'); return; }
+    if (form.website.value) { showDone(''); return; } // anti-spam
+    if (!endpoint) { setMsg('El registro aún no está conectado (falta REGISTRO_ENDPOINT en config.js).', 'err'); return; }
+
+    var q = new URLSearchParams(location.search);
+    var data = new URLSearchParams();
+    data.append('nombre', form.nombre.value.trim());
+    data.append('whatsapp', form.whatsapp.value.trim());
+    data.append('instagram', '@' + cleanIg(form.instagram.value));
+    data.append('perfil', form.querySelector('input[name="perfil"]:checked').value);
+    data.append('reto', form.reto.value);
+    data.append('consentimiento', 'Sí');
+    data.append('origen', 'Instagram · historias');
+    data.append('utm_source', q.get('utm_source') || 'instagram');
+    data.append('utm_medium', q.get('utm_medium') || 'historias');
+    data.append('utm_campaign', q.get('utm_campaign') || '');
+
+    btn.disabled = true; setMsg('Enviando…');
+    var name = form.nombre.value;
+    fetch(endpoint, { method: 'POST', mode: 'no-cors', body: data })
+      .then(function () { form.reset(); setMsg(''); showDone(name); })
+      .catch(function () { setMsg('No pudimos enviar tu registro. Revisa tu conexión e inténtalo de nuevo.', 'err'); })
+      .finally(function () { btn.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>
