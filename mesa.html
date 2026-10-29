@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mesa XPRT · Inscripción</title>
+<meta name="description" content="Inscripción a la Mesa XPRT: Escalar desde lo financiero. Sábado 14 de noviembre de 2026, Universidad CEIPA Sabaneta.">
+<meta name="theme-color" content="#0E1116">
+<meta property="og:title" content="Mesa XPRT · Escalar desde lo financiero">
+<meta property="og:description" content="Mesa cerrada para 5 dueños de empresa. Sábado 14 de noviembre, 8:00 a. m.">
+<meta property="og:image" content="assets/og-image.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0E1116;--cob:#2B50FF;--cob-d:#1F42EB;--cob-l:#DCE3FF;--bone:#F4F2EE;--gr:#5B6270;--line:#C9CDD5;--err:#C2261B}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--ink)}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;color:var(--ink);line-height:1.5;font-size:16px;-webkit-font-smoothing:antialiased;min-height:100vh}
+.top{position:relative;overflow:hidden;color:var(--bone);padding:calc(28px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) 44px max(20px,env(safe-area-inset-left,0px))}
+.diag{position:absolute;right:-42%;top:-20%;width:40%;height:150%;background:var(--cob);transform:skewX(-34deg)}
+.top-in{position:relative;max-width:520px;margin:0 auto}
+.logo{height:24px;width:auto;display:block}
+.eyebrow{margin-top:34px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#8EA0FF}
+h1{margin-top:10px;font-size:clamp(32px,9vw,44px);line-height:1.05;letter-spacing:-.03em;font-weight:800;max-width:13ch;text-wrap:balance}
+.sq{display:inline-block;width:.16em;height:.16em;background:var(--cob);margin-left:.05em}
+.lead{margin-top:14px;font-size:17px;color:#C9CFDA;max-width:34ch}
+.lead b{color:var(--bone)}
+.sheet{background:var(--bone);border-radius:20px 20px 0 0;padding:28px max(20px,env(safe-area-inset-right,0px)) calc(32px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));min-height:60vh}
+.sheet-in{max-width:520px;margin:0 auto}
+.gets{display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
+.gets li{list-style:none;display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#3A4150}
+.gets li::before{content:"";flex:0 0 8px;height:8px;margin-top:7px;background:var(--cob)}
+form{display:flex;flex-direction:column;gap:18px}
+.f{display:flex;flex-direction:column;gap:6px}
+label,.lbl{font-size:14px;font-weight:600}
+input[type=text],input[type=tel],input[type=email],select{font:inherit;font-size:16px;padding:14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);width:100%}
+input:focus,select:focus{outline:3px solid var(--cob-l);border-color:var(--cob)}
+.at{position:relative}
+.at span{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--gr);font-weight:600}
+.at input{padding-left:32px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{font-weight:500;font-size:15px;border:1.5px solid var(--line);background:#fff;border-radius:30px;padding:10px 16px;cursor:pointer;display:flex;align-items:center;gap:8px}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label:has(input:checked){background:var(--ink);border-color:var(--ink);color:#fff}
+.chips label:has(input:focus-visible){outline:3px solid var(--cob-l)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#3A4150;font-weight:400}
+.consent input{margin-top:3px;width:18px;height:18px;flex:0 0 18px;accent-color:var(--cob)}
+.consent a{color:var(--cob)}
+.invalid{border-color:var(--err)!important}
+.chips.invalid label{border-color:var(--err)}
+.consent.invalid{color:var(--err)}
+.btn{font:inherit;font-weight:700;font-size:17px;background:var(--cob);color:#fff;border:0;border-radius:10px;padding:17px 20px;cursor:pointer;width:100%;text-align:center;text-decoration:none;display:block}
+.btn:hover{background:var(--cob-d)}
+.btn:disabled{opacity:.6;cursor:wait}
+.btn-dark{background:var(--ink)}
+.btn-dark:hover{background:#1A1F27}
+.msg{font-size:14px;min-height:20px}
+.msg.err{color:var(--err)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.done{display:flex;flex-direction:column;gap:16px;text-align:center;align-items:center;padding:10px 0 20px}
+.ok{width:60px;height:60px;border-radius:50%;background:var(--cob-l);display:flex;align-items:center;justify-content:center}
+.done h2{font-size:26px;letter-spacing:-.02em;line-height:1.15}
+.done p{color:#3A4150;max-width:34ch}
+.handle{font-weight:700;color:var(--ink)}
+.fine{margin-top:22px;font-size:12px;color:var(--gr)}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:no-preference){.btn{transition:background .15s}}
+.diag{right:-46%;width:34%;height:62%;top:-20%}
+.meta{margin-top:22px;display:flex;flex-direction:column;border-top:1px solid #3A4252}
+.meta div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #2A303B;font-size:14px;color:#C9CFDA}
+.meta b{color:var(--bone);text-align:right}
+.sec{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--cob);margin-top:6px}
+textarea{font:inherit;font-size:16px;padding:14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);width:100%;min-height:96px;resize:vertical}
+textarea:focus{outline:3px solid var(--cob-l);border-color:var(--cob)}
+.opt{font-weight:400;color:var(--gr)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="diag" aria-hidden="true"></div>
+  <div class="top-in">
+    <img class="logo" src="assets/xprt-logo-negativo.svg" alt="XPRT Group">
+    <p class="eyebrow">Mesa XPRT · Cerrada · Por invitación</p>
+    <h1>Escalar desde lo financiero<span class="sq"></span></h1>
+    <p class="lead">Confirma tu puesto en la mesa. Son <b>5 puestos</b> y uno es tuyo.</p>
+    <div class="meta">
+      <div><span>Fecha</span><b>Sábado 14 de noviembre</b></div>
+      <div><span>Hora</span><b>8:00 a. m. – 10:00 a. m.</b></div>
+      <div><span>Lugar</span><b>Universidad CEIPA Sabaneta · Coworking #1</b></div>
+    </div>
+  </div>
+</header>
+
+<main class="sheet">
+  <div class="sheet-in">
+
+    <section id="form-view">
+      <form id="mesa-form" novalidate>
+        <p class="sec">Tus datos</p>
+        <div class="f">
+          <label for="nombre">Nombre completo</label>
+          <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+        </div>
+        <div class="f">
+          <label for="whatsapp">WhatsApp</label>
+          <input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="+57 300 000 0000" required>
+        </div>
+        <div class="f">
+          <label for="email">Correo electrónico</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+
+        <p class="sec">Tu proyecto</p>
+        <div class="f">
+          <label for="negocio">Nombre del proyecto o empresa</label>
+          <input id="negocio" name="negocio" type="text" autocomplete="organization" required>
+        </div>
+        <div class="f">
+          <label for="instagram">Instagram del proyecto</label>
+          <div class="at"><span aria-hidden="true">@</span><input id="instagram" name="instagram" type="text" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="tuproyecto" required></div>
+        </div>
+        <div class="f">
+          <label for="sector">Sector</label>
+          <select id="sector" name="sector" required>
+            <option value="">Elige una opción</option>
+            <option>Comercio (tienda física u online)</option>
+            <option>Alimentos y restaurantes</option>
+            <option>Moda y belleza</option>
+            <option>Servicios profesionales</option>
+            <option>Tecnología</option>
+            <option>Manufactura o producción</option>
+            <option>Construcción e inmobiliario</option>
+            <option>Salud y bienestar</option>
+            <option>Educación</option>
+            <option>Turismo y entretenimiento</option>
+            <option>Transporte y logística</option>
+            <option>Agro</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="f">
+          <span class="lbl" id="tiempo-lbl">¿Cuánto lleva en el mercado?</span>
+          <div class="chips" id="tiempo-chips" role="radiogroup" aria-labelledby="tiempo-lbl">
+            <label><input type="radio" name="tiempo" value="Menos de 1 año">Menos de 1 año</label>
+            <label><input type="radio" name="tiempo" value="1 a 3 años">1 a 3 años</label>
+            <label><input type="radio" name="tiempo" value="3 a 5 años">3 a 5 años</label>
+            <label><input type="radio" name="tiempo" value="Más de 5 años">Más de 5 años</label>
+          </div>
+        </div>
+        <div class="f">
+          <label for="reto">¿Qué te gustaría resolver en la mesa? <span class="opt">(opcional)</span></label>
+          <textarea id="reto" name="reto" maxlength="300" placeholder="Ej.: vendo bien pero no sé cuánto gano"></textarea>
+        </div>
+
+        <div class="hp" aria-hidden="true"><label for="website">No llenar</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <label class="consent" id="conf-wrap">
+          <input id="confidencialidad" name="confidencialidad" type="checkbox" required>
+          <span>Me comprometo a mantener la confidencialidad de lo que se comparta en la mesa.</span>
+        </label>
+        <label class="consent" id="consent-wrap">
+          <input id="consent" name="consent" type="checkbox" required>
+          <span>Autorizo a XPRT Group a tratar mis datos según su <a href="privacidad.html">política de tratamiento de datos</a> (Ley 1581 de 2012) para gestionar mi inscripción y contactarme.</span>
+        </label>
+        <button class="btn" id="submit-btn" type="submit">Confirmar mi puesto</button>
+        <p class="msg" id="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="done-view" class="done" hidden>
+      <div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2B50FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <h2 id="done-title">¡Tu puesto está confirmado!</h2>
+      <p>Nos vemos el sábado 14 de noviembre a las 8:00 a. m. en la Universidad CEIPA Sabaneta, Coworking #1. Te escribiremos por WhatsApp unos días antes.</p>
+      <p><b>Para preparar:</b> ten a mano tus ventas aproximadas de los últimos 3 meses y tus costos fijos del mes.</p>
+      <a class="btn" id="follow-btn" href="https://www.instagram.com/xprt.group/">Seguir a <span id="handle">@xprt.group</span></a>
+    </section>
+
+    <p class="fine">© 2026 XPRT Group · Medellín, Colombia.</p>
+  </div>
+</main>
+
+<script src="config.js"></script>
+<script>
+(function () {
+  var cfg = window.XPRT_CONFIG || {};
+  var endpoint = cfg.REGISTRO_ENDPOINT || '';
+  var igUser = (cfg.INSTAGRAM_USER || 'xprt.group').replace(/^@/, '');
+  var form = document.getElementById('mesa-form');
+  var msg = document.getElementById('form-msg');
+  var btn = document.getElementById('submit-btn');
+  var chips = document.getElementById('tiempo-chips');
+  var confWrap = document.getElementById('conf-wrap');
+  var consentWrap = document.getElementById('consent-wrap');
+
+  document.getElementById('handle').textContent = '@' + igUser;
+  document.getElementById('follow-btn').href = 'https://www.instagram.com/' + igUser + '/';
+
+  function setMsg(t, type) { msg.textContent = t; msg.className = 'msg' + (type ? ' ' + type : ''); }
+  function cleanIg(v) {
+    return v.trim().replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/^@+/, '').replace(/[/?#].*$/, '');
+  }
+
+  function validate() {
+    var ok = true;
+    function mark(el, bad) { el.classList.toggle('invalid', bad); if (bad) ok = false; }
+    mark(form.nombre, form.nombre.value.trim().length < 3);
+    mark(form.whatsapp, form.whatsapp.value.replace(/\D/g, '').length < 7);
+    mark(form.email, !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.value.trim()));
+    mark(form.negocio, form.negocio.value.trim().length < 2);
+    mark(form.instagram, !/^[A-Za-z0-9._]{1,30}$/.test(cleanIg(form.instagram.value)));
+    mark(form.sector, !form.sector.value);
+    mark(chips, !form.querySelector('input[name="tiempo"]:checked'));
+    mark(confWrap, !form.confidencialidad.checked);
+    mark(consentWrap, !form.consent.checked);
+    return ok;
+  }
+
+  form.addEventListener('input', function (e) {
+    e.target.classList.remove('invalid');
+    if (e.target.name === 'tiempo') chips.classList.remove('invalid');
+    if (e.target.name === 'confidencialidad') confWrap.classList.remove('invalid');
+    if (e.target.name === 'consent') consentWrap.classList.remove('invalid');
+  });
+
+  function showDone(name) {
+    var first = (name || '').trim().split(/\s+/)[0];
+    if (first) document.getElementById('done-title').textContent = '¡' + first + ', tu puesto está confirmado!';
+    document.getElementById('form-view').hidden = true;
+    document.getElementById('done-view').hidden = false;
+    window.scrollTo(0, 0);
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!validate()) { setMsg('Completa los campos marcados y acepta los compromisos.', 'err'); return; }
+    if (form.website.value) { showDone(''); return; }
+    if (!endpoint) { setMsg('La inscripción aún no está conectada (falta REGISTRO_ENDPOINT en config.js).', 'err'); return; }
+
+    var data = new URLSearchParams();
+    data.append('formulario', 'mesa');
+    data.append('evento', 'Mesa XPRT · 14 nov 2026');
+    data.append('nombre', form.nombre.value.trim());
+    data.append('whatsapp', form.whatsapp.value.trim());
+    data.append('email', form.email.value.trim());
+    data.append('negocio', form.negocio.value.trim());
+    data.append('instagram', '@' + cleanIg(form.instagram.value));
+    data.append('sector', form.sector.value);
+    data.append('tiempo', form.querySelector('input[name="tiempo"]:checked').value);
+    data.append('reto', form.reto.value.trim());
+    data.append('consentimiento', 'Sí');
+
+    btn.disabled = true; setMsg('Enviando…');
+    var name = form.nombre.value;
+    fetch(endpoint, { method: 'POST', mode: 'no-cors', body: data })
+      .then(function () { form.reset(); setMsg(''); showDone(name); })
+      .catch(function () { setMsg('No pudimos enviar tu inscripción. Revisa tu conexión e inténtalo de nuevo.', 'err'); })
+      .finally(function () { btn.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>
