@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recursos · Tablero de 5 números y datos para empresarios · XPRT Group</title>
+  <meta name="description" content="Herramientas gratuitas de XPRT Group: calcula el tablero de 5 números de tu negocio (margen, punto de equilibrio y ciclo de caja), datos del mercado con fuente y la Carta XPRT.">
+  <link rel="canonical" href="https://www.xprtgroup.com.co/recursos.html">
+  <meta property="og:title" content="Recursos · Tablero de 5 números y datos para empresarios · XPRT Group">
+  <meta property="og:description" content="Herramientas gratuitas de XPRT Group: calcula el tablero de 5 números de tu negocio (margen, punto de equilibrio y ciclo de caja), datos del mercado con fuente y la Carta XPRT.">
+  <meta property="og:image" content="https://www.xprtgroup.com.co/assets/og-image.png">
+  <meta property="og:url" content="https://www.xprtgroup.com.co/recursos.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta name="theme-color" content="#0E1116">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Esta página se genera con _src/build.py. Edita _src/pages/, no este archivo. -->
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand" aria-label="XPRT Group, inicio"><img src="assets/xprt-logo-negativo.svg" alt="XPRT Group" width="155" height="26"></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><span class="sr">Menú</span></button>
+    <nav class="links" id="menu" aria-label="Principal">
+        <a href="academy.html">Academy</a>
+        <a href="clases.html">Clases</a>
+        <a href="consulting.html">Consulting</a>
+        <a href="capital.html">Capital</a>
+        <a href="lo-que-viene.html">Lo que viene</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="recursos.html" aria-current="page">Recursos</a>
+        <a href="registro.html" class="btn btn-sm">Registro previo</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+<section class="hero page dark">
+  <div class="diag thin" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <p class="eyebrow">Recursos gratuitos</p>
+    <h1>Herramientas para mirar tu negocio con <span class="nw"><span class="nw">números<span class="sq"></span></span></span></h1>
+    <p class="lead">Empieza por lo básico: los cinco números que todo dueño debería conocer cada mes.</p>
+  </div>
+</section>
+
+<section class="section" id="tablero">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <p class="eyebrow">Herramienta 01</p>
+        <h2>Tu tablero de 5 <span class="nw">números<span class="sq"></span></span></h2>
+      </div>
+      <p class="sub">Escribe las cifras de un mes normal de tu negocio. Nada se envía ni se guarda: el cálculo ocurre en tu pantalla.</p>
+    </div>
+    <div class="calc">
+      <form class="form" onsubmit="return false" aria-label="Datos del mes">
+        <div class="field">
+          <label for="c-ventas">Ventas del mes</label>
+          <input id="c-ventas" type="text" inputmode="numeric" data-money value="30.000.000">
+          <p class="hint">Todo lo que facturaste en el mes, en pesos.</p>
+        </div>
+        <div class="field">
+          <label for="c-variables">Costos variables del mes</label>
+          <input id="c-variables" type="text" inputmode="numeric" data-money value="18.000.000">
+          <p class="hint">Los que suben o bajan con las ventas: mercancía, materia prima, comisiones, empaques.</p>
+        </div>
+        <div class="field">
+          <label for="c-fijos">Costos fijos del mes</label>
+          <input id="c-fijos" type="text" inputmode="numeric" data-money value="9.000.000">
+          <p class="hint">Los que llegan igual vendas o no: arriendo, nómina, servicios, software, tu propio sueldo.</p>
+        </div>
+        <fieldset class="field">
+          <legend>Ciclo de caja (en días)</legend>
+          <div class="row2">
+            <div><label for="c-cobro" class="opt">Días para cobrar</label><input id="c-cobro" type="number" min="0" inputmode="numeric" value="30"></div>
+            <div><label for="c-inventario" class="opt">Días de inventario</label><input id="c-inventario" type="number" min="0" inputmode="numeric" value="45"></div>
+          </div>
+          <div class="row2" style="margin-top:12px">
+            <div><label for="c-pago" class="opt">Días para pagar a proveedores</label><input id="c-pago" type="number" min="0" inputmode="numeric" value="30"></div>
+          </div>
+          <p class="hint">Si no manejas inventario o vendes de contado, escribe 0.</p>
+        </fieldset>
+      </form>
+
+      <div class="out" id="tablero-out" aria-live="polite">
+        <h3>Tu tablero del mes</h3>
+        <ul class="kpis">
+          <li><span>1 · Ventas</span><b id="r-ventas">—</b></li>
+          <li><span>2 · Margen de contribución<small>Lo que queda de cada venta después de costos variables</small></span><b id="r-margen" class="hl">—</b></li>
+          <li><span>3 · Costos fijos</span><b id="r-fijos">—</b></li>
+          <li><span>4 · Punto de equilibrio<small>Lo mínimo que debes vender al mes para no perder</small></span><b id="r-pe" class="hl">—</b></li>
+          <li><span>5 · Ciclo de caja<small>Cobro + inventario − pago a proveedores</small></span><b id="r-ciclo">—</b></li>
+          <li><span>Resultado operativo aproximado</span><b id="r-util">—</b></li>
+        </ul>
+        <div class="reading"><strong>Lectura XPRT</strong><span id="r-lectura">—</span></div>
+      </div>
+    </div>
+    <p class="disclaimer" id="tablero-legal">Herramienta educativa con cálculos simplificados. No reemplaza tu contabilidad ni la asesoría de un profesional.</p>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <p class="eyebrow">Datos del mercado</p>
+        <h2>El contexto, con <span class="nw">fuente<span class="sq"></span></span></h2>
+      </div>
+      <p class="sub">Las cifras que usamos para pensar el entorno de las pymes en Colombia. Cada una con su fuente para que la verifiques.</p>
+    </div>
+    <div class="scroll"><table class="table">
+      <thead><tr><th>Dato</th><th>Cifra</th><th>Fuente</th></tr></thead>
+      <tbody>
+        <tr><td>Empresas que siguen vivas a los cinco años</td><td><b>3 de cada 10</b></td><td>Confecámaras</td></tr>
+        <tr><td>Micronegocios sin ningún registro de sus cuentas</td><td><b>68,2 %</b></td><td>DANE, EMICRON 2024</td></tr>
+        <tr><td>Trabajadores por cuenta propia</td><td><b>9,9 millones</b> (41,8 % de los ocupados)</td><td>DANE, GEIH agosto de 2026</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section class="section dark" id="carta">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Carta XPRT</p>
+      <h2>Una carta cada quince <span class="nw">días<span class="sq light"></span></span></h2>
+      <p class="sub">Lo que está pasando en la economía y los negocios, y qué significa para tu empresa. Corta, con números y con postura.</p>
+    </div>
+    <form class="form" data-form="Web · Carta XPRT" data-ok="¡Listo! Te llegará la próxima Carta XPRT." novalidate>
+      <input type="hidden" name="interes" value="Carta XPRT">
+      <div class="field">
+        <label for="n-nombre">Nombre</label>
+        <input id="n-nombre" name="nombre" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="n-email">Correo electrónico</label>
+        <input id="n-email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="hp" aria-hidden="true"><label>No llenar <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <label class="consent">
+        <input type="checkbox" name="consent" required>
+        <span>Autorizo a XPRT Group a tratar mis datos según su <a href="privacidad.html" target="_blank" rel="noopener">política de tratamiento de datos</a> (Ley 1581 de 2012) para enviarme la Carta XPRT.</span>
+      </label>
+      <button type="submit" class="btn btn-full">Recibir la Carta XPRT</button>
+      <p class="form-msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer dark">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/xprt-logo-negativo.svg" alt="XPRT Group" width="150" height="25">
+        <p>Formamos criterio. Acompañamos. Invertimos contigo<span class="sq"></span></p>
+        <p class="muted">Ecosistema financiero · Medellín, Colombia.<br>Se dice “Expert”.</p>
+      </div>
+      <nav aria-label="Ecosistema">
+        <h4>Ecosistema</h4>
+        <a href="academy.html">XPRT Academy</a>
+        <a href="clases.html">Clases pregrabadas</a>
+        <a href="consulting.html">XPRT Consulting</a>
+        <a href="capital.html">XPRT Capital</a>
+      </nav>
+      <nav aria-label="XPRT">
+        <h4>XPRT</h4>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="lo-que-viene.html">Lo que viene</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="registro.html">Registro previo</a>
+      </nav>
+      <nav aria-label="Contacto">
+        <h4>Contacto</h4>
+        <a href="https://www.instagram.com/xprt.group" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/xprt-group" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:soyxprt@gmail.com">soyxprt@gmail.com</a>
+        <a href="privacidad.html">Tratamiento de datos</a>
+      </nav>
+    </div>
+    <p class="legal">© 2026 XPRT Group · Medellín, Colombia. El contenido de este sitio es educativo e informativo; no es una recomendación de inversión ni una oferta de valores. XPRT Group no capta dinero del público ni promete rentabilidades.</p>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

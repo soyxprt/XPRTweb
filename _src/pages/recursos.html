@@ -1,0 +1,117 @@
+<!--
+title: Recursos · Tablero de 5 números y datos para empresarios · XPRT Group
+description: Herramientas gratuitas de XPRT Group: calcula el tablero de 5 números de tu negocio (margen, punto de equilibrio y ciclo de caja), datos del mercado con fuente y la Carta XPRT.
+nav: recursos
+-->
+<section class="hero page dark">
+  <div class="diag thin" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <p class="eyebrow">Recursos gratuitos</p>
+    <h1>Herramientas para mirar tu negocio con <span class="nw">números<span class="sq"></span></span></h1>
+    <p class="lead">Empieza por lo básico: los cinco números que todo dueño debería conocer cada mes.</p>
+  </div>
+</section>
+
+<section class="section" id="tablero">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <p class="eyebrow">Herramienta 01</p>
+        <h2>Tu tablero de 5 números<span class="sq"></span></h2>
+      </div>
+      <p class="sub">Escribe las cifras de un mes normal de tu negocio. Nada se envía ni se guarda: el cálculo ocurre en tu pantalla.</p>
+    </div>
+    <div class="calc">
+      <form class="form" onsubmit="return false" aria-label="Datos del mes">
+        <div class="field">
+          <label for="c-ventas">Ventas del mes</label>
+          <input id="c-ventas" type="text" inputmode="numeric" data-money value="30.000.000">
+          <p class="hint">Todo lo que facturaste en el mes, en pesos.</p>
+        </div>
+        <div class="field">
+          <label for="c-variables">Costos variables del mes</label>
+          <input id="c-variables" type="text" inputmode="numeric" data-money value="18.000.000">
+          <p class="hint">Los que suben o bajan con las ventas: mercancía, materia prima, comisiones, empaques.</p>
+        </div>
+        <div class="field">
+          <label for="c-fijos">Costos fijos del mes</label>
+          <input id="c-fijos" type="text" inputmode="numeric" data-money value="9.000.000">
+          <p class="hint">Los que llegan igual vendas o no: arriendo, nómina, servicios, software, tu propio sueldo.</p>
+        </div>
+        <fieldset class="field">
+          <legend>Ciclo de caja (en días)</legend>
+          <div class="row2">
+            <div><label for="c-cobro" class="opt">Días para cobrar</label><input id="c-cobro" type="number" min="0" inputmode="numeric" value="30"></div>
+            <div><label for="c-inventario" class="opt">Días de inventario</label><input id="c-inventario" type="number" min="0" inputmode="numeric" value="45"></div>
+          </div>
+          <div class="row2" style="margin-top:12px">
+            <div><label for="c-pago" class="opt">Días para pagar a proveedores</label><input id="c-pago" type="number" min="0" inputmode="numeric" value="30"></div>
+          </div>
+          <p class="hint">Si no manejas inventario o vendes de contado, escribe 0.</p>
+        </fieldset>
+      </form>
+
+      <div class="out" id="tablero-out" aria-live="polite">
+        <h3>Tu tablero del mes</h3>
+        <ul class="kpis">
+          <li><span>1 · Ventas</span><b id="r-ventas">—</b></li>
+          <li><span>2 · Margen de contribución<small>Lo que queda de cada venta después de costos variables</small></span><b id="r-margen" class="hl">—</b></li>
+          <li><span>3 · Costos fijos</span><b id="r-fijos">—</b></li>
+          <li><span>4 · Punto de equilibrio<small>Lo mínimo que debes vender al mes para no perder</small></span><b id="r-pe" class="hl">—</b></li>
+          <li><span>5 · Ciclo de caja<small>Cobro + inventario − pago a proveedores</small></span><b id="r-ciclo">—</b></li>
+          <li><span>Resultado operativo aproximado</span><b id="r-util">—</b></li>
+        </ul>
+        <div class="reading"><strong>Lectura XPRT</strong><span id="r-lectura">—</span></div>
+      </div>
+    </div>
+    <p class="disclaimer" id="tablero-legal">Herramienta educativa con cálculos simplificados. No reemplaza tu contabilidad ni la asesoría de un profesional.</p>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <p class="eyebrow">Datos del mercado</p>
+        <h2>El contexto, con fuente<span class="sq"></span></h2>
+      </div>
+      <p class="sub">Las cifras que usamos para pensar el entorno de las pymes en Colombia. Cada una con su fuente para que la verifiques.</p>
+    </div>
+    <div class="scroll"><table class="table">
+      <thead><tr><th>Dato</th><th>Cifra</th><th>Fuente</th></tr></thead>
+      <tbody>
+        <tr><td>Empresas que siguen vivas a los cinco años</td><td><b>3 de cada 10</b></td><td>Confecámaras</td></tr>
+        <tr><td>Micronegocios sin ningún registro de sus cuentas</td><td><b>68,2 %</b></td><td>DANE, EMICRON 2024</td></tr>
+        <tr><td>Trabajadores por cuenta propia</td><td><b>9,9 millones</b> (41,8 % de los ocupados)</td><td>DANE, GEIH agosto de 2026</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section class="section dark" id="carta">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Carta XPRT</p>
+      <h2>Una carta cada quince días<span class="sq light"></span></h2>
+      <p class="sub">Lo que está pasando en la economía y los negocios, y qué significa para tu empresa. Corta, con números y con postura.</p>
+    </div>
+    <form class="form" data-form="Web · Carta XPRT" data-ok="¡Listo! Te llegará la próxima Carta XPRT." novalidate>
+      <input type="hidden" name="interes" value="Carta XPRT">
+      <div class="field">
+        <label for="n-nombre">Nombre</label>
+        <input id="n-nombre" name="nombre" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="n-email">Correo electrónico</label>
+        <input id="n-email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="hp" aria-hidden="true"><label>No llenar <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <label class="consent">
+        <input type="checkbox" name="consent" required>
+        <span>Autorizo a XPRT Group a tratar mis datos según su <a href="privacidad.html" target="_blank" rel="noopener">política de tratamiento de datos</a> (Ley 1581 de 2012) para enviarme la Carta XPRT.</span>
+      </label>
+      <button type="submit" class="btn btn-full">Recibir la Carta XPRT</button>
+      <p class="form-msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
