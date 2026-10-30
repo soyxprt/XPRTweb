@@ -25,9 +25,9 @@ SITE = "https://www.xprtgroup.com.co"
 
 NAV = [
     ("academy", "academy.html", "Academy"),
-    ("clases", "clases.html", "Clases"),
     ("consulting", "consulting.html", "Consulting"),
     ("capital", "capital.html", "Capital"),
+    ("agenda", "agenda.html", "Agenda"),
     ("viene", "lo-que-viene.html", "Lo que viene"),
     ("nosotros", "nosotros.html", "Nosotros"),
     ("recursos", "recursos.html", "Recursos"),

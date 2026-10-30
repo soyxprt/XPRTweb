@@ -225,6 +225,25 @@ input:focus,select:focus{outline:none;border-color:var(--cob);box-shadow:0 0 0 3
 .inline-form .consent,.inline-form .form-msg{grid-column:1/-1}
 .dark .form{color:var(--ink)}
 
+/* Agenda */
+.filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:14px;background:var(--bone);border:1px solid var(--line);border-radius:var(--r);padding:20px 20px 4px}
+.ag-count{margin:18px 0 14px;font-size:14px}
+.ev .ev-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.ev .ev-top .pill{margin:0}
+.ev h3{margin:12px 0 4px}
+.ev .ev-org{font-size:14.5px;color:var(--gr)}
+.ev .ev-date{font-weight:600;margin-top:10px;font-size:15.5px}
+.ev details{margin-top:14px;border-top:1px solid var(--line);padding-top:12px}
+.ev summary{cursor:pointer;font-size:14.5px;font-weight:600;color:var(--cob);display:flex;align-items:center;gap:8px;list-style:none}
+.ev summary::-webkit-details-marker{display:none}
+.ev summary::before{content:"+";font-weight:700;width:12px}
+.ev details[open] summary::before{content:"−"}
+.ev summary .pill{margin-left:auto}
+.ev dl{margin-top:10px;font-size:14.5px}
+.ev dt{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gr);font-weight:700;margin-top:10px}
+.ev dd{color:var(--text);margin-top:2px}
+.white .filters{background:var(--bone)}
+
 /* Documento legal */
 .doc{max-width:780px}
 .doc h2{font-size:22px;margin:38px 0 10px;max-width:none;letter-spacing:-.01em}
@@ -275,6 +294,8 @@ input:focus,select:focus{outline:none;border-color:var(--cob);box-shadow:0 0 0 3
   .foot-grid{grid-template-columns:1fr 1fr}
   .foot-brand{grid-column:1/-1}
   .inline-form{grid-template-columns:1fr}
+  .filters{grid-template-columns:1fr 1fr}
+  .filters .field:first-child{grid-column:1/-1}
 }
 @media (max-width:560px){
   body{font-size:16px}
