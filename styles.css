@@ -97,7 +97,9 @@ p b{font-weight:600}
 .stage .n{font-size:13px;font-weight:700;color:var(--cob);letter-spacing:.14em}
 .dark .stage .n{color:#8EA2FF}
 .stage h3{font-size:26px}
-.stage .q{font-size:17px;font-weight:600;color:var(--text)}
+.stage .desc{font-size:15px;color:var(--gr);line-height:1.4}
+.dark .stage .desc{color:#9AA3B2}
+.stage .q{font-size:16px;font-weight:600;color:var(--text)}
 .dark .stage .q{color:var(--ink-text)}
 .stage-detail{display:grid;grid-template-columns:240px 1fr 1fr;gap:36px;padding:44px 0;border-top:1px solid var(--line)}
 .stage-detail:first-of-type{border-top:2px solid var(--ink)}

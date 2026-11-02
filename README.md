@@ -7,7 +7,7 @@ Sitio estático de XPRT Group publicado con GitHub Pages (rama `main`, carpeta r
 | Archivo | Página |
 |---|---|
 | `index.html` | Inicio (eslogan, Ruta XPRT, qué hacemos) |
-| `ruta.html` | Ruta XPRT: Prueba, Tracción, Sustento y Excedente, con diagnóstico rápido |
+| `ruta.html` | Ruta XPRT: Explorador, Creador, Cultivador y Conquistador (ver XPRT_Ciclo_de_Vida_del_Negocio), con diagnóstico rápido |
 | `quienes-somos.html` | Quiénes somos y contacto |
 | `registro.html` | Registro (recibe `?etapa=` desde el diagnóstico rápido) |
 | `privacidad.html` | Política de tratamiento de datos y PQRS (Ley 1581 de 2012) |
@@ -41,13 +41,13 @@ Las páginas de la tabla de arriba **se generan**. No se editan directamente:
 ## Formularios → Google Sheets
 
 Todos envían a la hoja **“XPRT · Registro previo”**:
-- Pestaña **Registros**: `registro.html` y `unete.html`. La columna **Origen** dice de cuál vino; la etapa del diagnóstico llega en **Interés**.
+- Pestaña **Registros**: `registro.html` y `unete.html`. La columna **Origen** dice de cuál vino; el momento del diagnóstico llega en **Interés** ("Momento: Creador").
 - Pestaña **Mesa XPRT**: `mesa.html` (campo `formulario = mesa`).
 
 El envío usa `fetch` en modo `no-cors`, así que la página siempre muestra “confirmado”.
 Para verificar un registro hay que mirar la hoja.
 
-Los botones pueden llegar con un interés ya marcado: `registro.html?interes=Diagnóstico Ruta XPRT&etapa=Tracción`.
+Los botones pueden llegar con un interés ya marcado: `registro.html?interes=Diagnóstico Ruta XPRT&etapa=Creador`.
 
 ## Medir campañas
 

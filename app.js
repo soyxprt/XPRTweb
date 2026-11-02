@@ -24,10 +24,10 @@
   var endpoint = (window.XPRT_CONFIG && window.XPRT_CONFIG.REGISTRO_ENDPOINT) || '';
   var params = new URLSearchParams(location.search);
 
-  // ?etapa=Tracción (desde el diagnóstico rápido) se guarda junto con los intereses.
+  // ?etapa=Creador (desde el diagnóstico rápido) se guarda junto con los intereses.
   var etapa = params.get('etapa');
   var etapaField = document.getElementById('etapa-field');
-  if (etapa && etapaField) { etapaField.value = 'Etapa: ' + etapa.slice(0, 30); etapaField.disabled = false; }
+  if (etapa && etapaField) { etapaField.value = 'Momento: ' + etapa.slice(0, 30); etapaField.disabled = false; }
 
   // ?interes=Diagnóstico Ruta XPRT marca esa casilla al llegar desde un botón.
   var pre = params.get('interes');
