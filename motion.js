@@ -3,12 +3,10 @@
    2. Luz y diagonales que siguen al cursor en la portada
    3. Tarjetas de momentos que reaccionan al cursor
    4. Aparecer al hacer scroll
-   5. Cursor de marca: el punto cuadrado
    Todo se desactiva si la persona pidió reducir el movimiento. */
 (function () {
   'use strict';
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var finePointer = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   /* 1. Eslogan ---------------------------------------------------------- */
   var slogan = document.getElementById('slogan');
@@ -21,7 +19,8 @@
       lines.forEach(function (l, k) { l.classList.toggle('is-on', k === i); });
     };
     var play = function () {
-      if (reduce) return;
+    
+  if (reduce) return;
       clearInterval(timer);
       slogan.classList.remove('paused');
       timer = setInterval(function () { activate((idx + 1) % lines.length); }, DUR);
@@ -31,6 +30,40 @@
     });
     slogan.addEventListener('mouseleave', play);
     if (reduce) { lines.forEach(function (l) { l.classList.add('is-on'); }); } else { play(); }
+  }
+
+  /* Escalera "Del emprendimiento al negocio": dibuja las líneas entre los puntos */
+  var ladder = document.getElementById('ladder');
+  if (ladder) {
+    var svg = ladder.querySelector('.ladder-lines'), pl = svg.querySelector('polyline'), bl = svg.querySelector('line');
+    var draw = function () {
+      if (getComputedStyle(svg).display === 'none') return;
+      var box = ladder.getBoundingClientRect();
+      svg.setAttribute('viewBox', '0 0 ' + box.width + ' ' + box.height);
+      var c = function (el) { var r = el.getBoundingClientRect(); return [r.left - box.left + r.width / 2, r.top - box.top + r.height / 2]; };
+      var pts = Array.prototype.map.call(ladder.querySelectorAll('.lsteps .node'), c);
+      pl.setAttribute('points', pts.map(function (p) { return p[0].toFixed(1) + ',' + p[1].toFixed(1); }).join(' '));
+      var last = pts[pts.length - 1], nx = c(ladder.querySelector('.node-light'));
+      bl.setAttribute('x1', last[0]); bl.setAttribute('y1', last[1]); bl.setAttribute('x2', nx[0]); bl.setAttribute('y2', nx[1]);
+      var len = 0; for (var i = 1; i < pts.length; i++) len += Math.hypot(pts[i][0] - pts[i-1][0], pts[i][1] - pts[i-1][1]);
+      pl.style.setProperty('--len', Math.ceil(len)); bl.style.setProperty('--len', Math.ceil(Math.hypot(nx[0] - last[0], nx[1] - last[1])));
+    };
+    draw();
+    window.addEventListener('resize', draw);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+    var panel = ladder.querySelector('.ladder-panel');
+    panel.addEventListener('pointermove', function (e) {
+      var r = panel.getBoundingClientRect();
+      panel.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%');
+      panel.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
+    });
+    if (!reduce && 'IntersectionObserver' in window && getComputedStyle(svg).display !== 'none' && ladder.getBoundingClientRect().top > window.innerHeight * .6) {
+      ladder.classList.add('anim');
+      var lio = new IntersectionObserver(function (en) {
+        if (en[0].isIntersecting) { draw(); ladder.classList.add('drawn'); lio.disconnect(); setTimeout(function () { ladder.classList.remove('anim', 'drawn'); }, 3200); }
+      }, { threshold: .35 });
+      lio.observe(ladder);
+    }
   }
 
   if (reduce) return;
@@ -79,28 +112,6 @@
         io.observe(el);
       }
     });
-  }
-
-  /* 5. Cursor de marca -------------------------------------------------- */
-  if (finePointer) {
-    var dot = document.createElement('div');
-    dot.className = 'cursor-dot';
-    dot.setAttribute('aria-hidden', 'true');
-    document.body.appendChild(dot);
-    var tx = -100, ty = -100, cx = -100, cy = -100;
-    window.addEventListener('pointermove', function (e) { tx = e.clientX; ty = e.clientY; }, { passive: true });
-    var tick = function () {
-      cx += (tx - cx) * .22; cy += (ty - cy) * .22;
-      dot.style.transform = 'translate3d(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px,0)';
-      requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-    var hot = 'a, button, .stage, .qitem, .slogan .ln, input, select, label.chip';
-    document.addEventListener('pointerover', function (e) { if (e.target.closest(hot)) dot.classList.add('big'); });
-    document.addEventListener('pointerout', function (e) { if (e.target.closest(hot) && !(e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest(hot))) dot.classList.remove('big'); });
-    document.addEventListener('pointerdown', function () { dot.classList.add('down'); });
-    document.addEventListener('pointerup', function () { dot.classList.remove('down'); });
-    document.addEventListener('pointerleave', function () { tx = ty = -100; });
   }
 
   /* Diagnóstico: pequeño "pop" cuando cambia el resultado */
