@@ -24,7 +24,12 @@
   var endpoint = (window.XPRT_CONFIG && window.XPRT_CONFIG.REGISTRO_ENDPOINT) || '';
   var params = new URLSearchParams(location.search);
 
-  // ?interes=Diagnóstico 5D marca esa casilla al llegar desde un botón.
+  // ?etapa=Tracción (desde el diagnóstico rápido) se guarda junto con los intereses.
+  var etapa = params.get('etapa');
+  var etapaField = document.getElementById('etapa-field');
+  if (etapa && etapaField) { etapaField.value = 'Etapa: ' + etapa.slice(0, 30); etapaField.disabled = false; }
+
+  // ?interes=Diagnóstico Ruta XPRT marca esa casilla al llegar desde un botón.
   var pre = params.get('interes');
   if (pre) {
     document.querySelectorAll('input[name="interes"]').forEach(function (c) {

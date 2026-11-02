@@ -24,13 +24,8 @@ ROOT = SRC.parent
 SITE = "https://www.xprtgroup.com.co"
 
 NAV = [
-    ("academy", "academy.html", "Academy"),
-    ("consulting", "consulting.html", "Consulting"),
-    ("capital", "capital.html", "Capital"),
-    ("agenda", "agenda.html", "Agenda"),
-    ("viene", "lo-que-viene.html", "Lo que viene"),
-    ("nosotros", "nosotros.html", "Nosotros"),
-    ("recursos", "recursos.html", "Recursos"),
+    ("ruta", "ruta.html", "Ruta XPRT"),
+    ("quienes", "quienes-somos.html", "Quiénes somos"),
 ]
 
 
